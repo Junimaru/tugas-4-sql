@@ -3,7 +3,7 @@ Submit Jawaban Tugas 4
 # Panduan Olah data dengan bash
 
 ## Preview Data
-Tanmpilkan masing masing data yang telah dibuat dengan menggunakan tool csvkit (csvlook).
+Tampilkan masing masing data yang telah dibuat dengan menggunakan tool csvkit (csvlook).
 
 ```
 csvlook 2019-Oct-sample.csv
@@ -19,7 +19,7 @@ csvstack 2019-Oct-sample.csv 2019-Nov-sample.csv > data_gab.csv
 
 ```
 
-## Merge Data
+## Preview Data Gabungan
 Tampilkan Hasil gabungan tersebut 
 Note: kalau tidak menggunakan 'head' maka data tidak bisa tampil (sniffing error) karena terlalu banyak baris.
 
@@ -31,19 +31,22 @@ Hasilnya:
 
 <img src="img/preview-data-gab.png" width="1000"/>
 
+
 ## Seleksi Kolom
+
 Dari list kolom yang ada ambil kolom yang relevan untuk ditampilkan menggunakan csvcut.
 Berikut daftar kolom beserta urutannya.
-  1:
-  2: event_time
-  3: event_type
-  4: product_id
-  5: category_id
-  6: category_code
-  7: brand
-  8: price
-  9: user_id
-  10: user_session
+
+* 1:
+* 2: event_time
+* 3: event_type
+* 4: product_id
+* 5: category_id
+* 6: category_code
+* 7: brand
+* 8: price
+* 9: user_id
+* 10: user_session
 
 ```
 csvcut -c 2,3,4,5,7,8,6
@@ -68,7 +71,7 @@ Hasilnya:
 
 
 ## Split Kolom
-Pada kolom terkahir Category Ccode kita akan split mnjadi 2 kolo dengan kolom pertama adalah mengambil kata pertama dan kolom terkahir mengambil kata terkahir emnggunakan "awk".
+Pada kolom terkahir Category Code kita akan split menjadi 2 kolom dengan kolom pertama adalah mengambil kata pertama dan kolom terkahir mengambil kata terkahir emnggunakan "awk".
 * Pertama-tama kita split kolom untuk mengambil kata pertama dan membuat judul kolom menjadi "categori" dan "produk_name".
 
 ```
